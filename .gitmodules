@@ -1,0 +1,3 @@
+[submodule "unsign"]
+	path = unsign
+	url = git@github.com:ttimasdf/macho-unsign.git
