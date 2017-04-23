@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
-import subprocess
 import mmap
 import logging
 
@@ -13,6 +12,8 @@ fingerprints = [
 ]
 
 sub = (b'orig', b'subs')  # (original_bytes, substituted_bytes) -- same length!
+
+
 def main(*argv):
     if len(argv) >= 2:
         app_path = Path(argv[1])
