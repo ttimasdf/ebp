@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Uni-patcher is a program which would patch binary efficiently based on binary fingerprints.
+"""
 
 from pathlib import Path
 import mmap
