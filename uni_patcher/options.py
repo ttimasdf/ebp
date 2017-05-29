@@ -4,7 +4,7 @@ desc = """Uni-patcher is a program which would patch (even largs) binary
 efficiently based on binary fingerprints.
 """
 
-_parser = ArgumentParser(description=desc)
+_parser = ArgumentParser(prog=__package__, description=desc)
 
 _parser.add_argument("-c", "--config",
     dest="conf_file", help="Configuration file")

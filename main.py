@@ -50,3 +50,5 @@ Advice from author:
 """.format(congrat=m['congratulation']))
     log.info("Patch completed successfully!")
 
+if __name__ == '__main__':
+    main()
