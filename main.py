@@ -42,6 +42,7 @@ def main():
 
         if p.unsign:
             unsign_macho(p.file.open('r+b'))
+            log.info("Unsign {} completed".format(name))
 
         p.patch()
 
