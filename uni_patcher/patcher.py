@@ -55,7 +55,7 @@ class Patcher(object):
                         log.debug("Fingerprint {} match!".format(j))
                         match = True
                     else:
-                        log.debug("Fingerprint {} unmatch! {:X} => {:X}".format(j, fg, self._map[target:target+len(fg)]))
+                        log.debug("Fingerprint {} unmatch! {} => {}".format(j, fg.hex(), self._map[target:target+len(fg)].hex()))
                         match = False
                         break
                 if match:
