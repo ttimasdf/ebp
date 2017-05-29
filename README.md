@@ -1,6 +1,28 @@
 # uni-patcher
 It can patch a binary, just tell it where and how.
 
+
+# Usage
+```
+usage: uni_patcher [-h] [-c CONF_FILE] [-u] [-r] [-t] [-v] source
+
+Uni-patcher is a program which would patch (even largs) binary efficiently
+based on binary fingerprints.
+
+positional arguments:
+  source                Base directory from config file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONF_FILE, --config CONF_FILE
+                        Configuration file
+  -u, --unsign          Unsign executable if needed
+  -r, --reverse         Revert files using backups
+  -t, --test, --dry-run
+                        Verify only
+  -v, --verbose         Output more information for diagnostic
+  ```
+
 # Config file format
 ```
 [metadata]
