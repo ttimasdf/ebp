@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Uni-patcher is a program which would patch (even largs) binary
 efficiently based on binary fingerprints.
