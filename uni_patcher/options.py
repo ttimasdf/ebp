@@ -8,8 +8,6 @@ _parser = ArgumentParser(prog=__package__, description=desc)
 
 _parser.add_argument("-c", "--config",
     dest="conf_file", help="Configuration file")
-_parser.add_argument("-u", "--unsign",
-    action="store_true", help="Unsign executable if needed")
 _parser.add_argument("-r", "--reverse",
     action="store_true", help="Revert files using backups")
 _parser.add_argument("-t", "--test", "--dry-run",

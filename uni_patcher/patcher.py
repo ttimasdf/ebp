@@ -9,6 +9,7 @@ class Patcher(object):
     """Initialize essential information"""
     def __init__(self, meta, basedir='.', test=False):
         assert isinstance(meta, dict)
+        log.debug("Patcher params "+str(meta))
         self.__dict__.update(meta)
         self.test = test
         self.file = Path(basedir)/self.file
