@@ -5,7 +5,7 @@ efficiently based on binary fingerprints.
 """
 
 from uni_patcher import config, options, logging
-from uni_patcher.patcher import PatchedFile
+from uni_patcher.patcher import Patcher
 from os.path import exists
 
 def main():
