@@ -4,7 +4,7 @@ It can patch a binary, just tell it where and how.
 
 # Usage
 ```
-usage: uni_patcher [-h] [-c CONF_FILE] [-u] [-r] [-t] [-v] source
+usage: uni_patcher [-h] [-c CONF_FILE] [-r] [-t] [-v] source
 
 Uni-patcher is a program which would patch (even large) binary efficiently
 based on binary fingerprints.
@@ -16,12 +16,11 @@ optional arguments:
   -h, --help            show this help message and exit
   -c CONF_FILE, --config CONF_FILE
                         Configuration file
-  -u, --unsign          Unsign executable if needed
   -r, --reverse         Revert files using backups
   -t, --test, --dry-run
                         Verify only
   -v, --verbose         Output more information for diagnostic
-  ```
+```
 
 # Config file format
 ```
@@ -32,6 +31,7 @@ congratulation=Print after applying the patch
 
 [patch:what_ever_the_name]
 unsign=true
+file=relative/path/from/basedir
 
 # Relative patches format(one entry per line, indented):
 # SRC,DST,(FINGERPRINT_POS,EXPECTED_DATA)+
