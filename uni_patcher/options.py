@@ -1,6 +1,8 @@
-from .main import __doc__ as desc
 from argparse import ArgumentParser, FileType
 
+desc = """Uni-patcher is a program which would patch (even largs) binary
+efficiently based on binary fingerprints.
+"""
 
 _parser = ArgumentParser(description=desc)
 
