@@ -6,7 +6,7 @@ It can patch a binary, just tell it where and how.
 ```
 usage: uni_patcher [-h] [-c CONF_FILE] [-u] [-r] [-t] [-v] source
 
-Uni-patcher is a program which would patch (even largs) binary efficiently
+Uni-patcher is a program which would patch (even large) binary efficiently
 based on binary fingerprints.
 
 positional arguments:

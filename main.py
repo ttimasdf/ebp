@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Uni-patcher is a program which would patch (even largs) binary
+Uni-patcher is a program which would patch (even large) binary
 efficiently based on binary fingerprints.
 """
 
@@ -10,7 +10,7 @@ from os.path import exists
 
 def main():
     args = options.get_args()
-    log = logging.get_logger(__package__, args.verbose)
+    log = logging.get_logger("__package__", args.verbose)
 
     if not exists(args.conf_file):
         log.critical("Cannot find config file, exiting...")

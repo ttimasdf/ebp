@@ -1,6 +1,6 @@
 from argparse import ArgumentParser, FileType
 
-desc = """Uni-patcher is a program which would patch (even largs) binary
+desc = """Uni-patcher is a program which would patch (even large) binary
 efficiently based on binary fingerprints.
 """
 
