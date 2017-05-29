@@ -1,6 +1,6 @@
 from . import logging
 from pathlib import Path
-import self._mapap
+import mmap
 
 
 log = logging.get_logger(__name__)
