@@ -10,7 +10,7 @@ from os.path import exists
 
 def main():
     args = options.get_args()
-    log = logging.get_logger("__package__", args.verbose)
+    log = logging.get_logger(__package__, args.verbose)
 
     if not exists(args.conf_file):
         log.critical("Cannot find config file, exiting...")
@@ -27,7 +27,7 @@ def main():
 {desc}
 """.format(
     name=m['name'],
-    len=len(m['name']),
+    len='='*len(m['name']),
     desc=m["description"],
     ))
 

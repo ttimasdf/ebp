@@ -32,7 +32,9 @@ def parse_file(filename):
                 this['relatives'].append({
                     "src": bytes.fromhex(line[0]),
                     "dst": bytes.fromhex(line[1]),
-                    "fg": zip(line[2::2], line[3::2]),
+                    "fg": zip(
+                        (int(i) for i in line[2::2]),
+                        (bytes.fromhex(i) for i in line[3::2])),
                     })
         if 'absolutes' in s:
             for line in s['absolutes'].strip('\n, ').split('\n'):
