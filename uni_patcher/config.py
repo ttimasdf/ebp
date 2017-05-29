@@ -1,6 +1,6 @@
 import configparser
 
-PATCH_SUFFIX = ".patched"
+BACKUP_SUFFIX = ".bak"
 
 _parser = configparser.ConfigParser()
 

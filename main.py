@@ -7,6 +7,8 @@ efficiently based on binary fingerprints.
 from uni_patcher import config, options, logging
 from uni_patcher.patcher import Patcher
 from os.path import exists
+import shutil
+from unsign.unsign import unsign_macho
 
 def main():
     args = options.get_args()
@@ -14,7 +16,7 @@ def main():
 
     if not exists(args.conf_file):
         log.critical("Cannot find config file, exiting...")
-        return 1
+        raise SystemExit
 
     conf = config.parse_file(args.conf_file)
     m = conf['metadata']
@@ -35,9 +37,11 @@ def main():
         log.info("Patching {}...".format(name))
 
         p = Patcher(info, basedir=args.source, test=args.test)
+        bak = shutil.copyfile(p.file, p.file.parent/(p.file.name+config.BACKUP_SUFFIX))
+        log.debug("Backed up to {}".format(bak))
 
         if p.unsign:
-            log.error("NotImplemented: automatic unsign")
+            unsign_macho(p.file.open('r+b'))
 
         p.patch()
 

@@ -63,8 +63,7 @@ class Patcher(object):
                         log.debug("Patch {} located at position {}".format(i,anchor))
                     else:
                         log.debug("Patching bytes at position {}".format(anchor))
-                        if input("Continue?(y/n)") == 'y':
-                            self._map[anchor:anchor+len(item['dst'])] = item['dst']
+                        self._map[anchor:anchor+len(item['dst'])] = item['dst']
                     break
                 anchor = self._map.find(item['src'], anchor+1)
 
