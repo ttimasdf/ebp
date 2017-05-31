@@ -1,12 +1,12 @@
-# uni-patcher
-It can patch a binary, just tell it where and how.
+# Extensive Binary Patcher
+EBP can patch a binary, just tell it where and how. Optionally, it can remove the signature from a macho-format executable.
 
 
 # Usage
 ```
-usage: uni_patcher [-h] [-c CONF_FILE] [-r] [-t] [-v] source
+usage: ebpatcher [-h] [-c CONF_FILE] [-r] [-t] [-v] source
 
-Uni-patcher is a program which would patch (even large) binary efficiently
+EBP is a program which would patch (even large) binary efficiently
 based on binary fingerprints.
 
 positional arguments:

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Uni-patcher is a program which would patch (even large) binary
+EBP is a program which would patch (even large) binary
 efficiently based on binary fingerprints.
 """
 
-from uni_patcher import config, options, logging
-from uni_patcher.patcher import Patcher
+from EBP import config, options, logging
+from EBP.patcher import Patcher
 from os.path import exists
 import shutil
 from unsign.unsign import unsign_macho
@@ -22,9 +22,9 @@ def main():
     m = conf['metadata']
 
     print("""
-=================={len}====
-    Uni-patcher @ {name}
-=================={len}====
+=========={len}====
+    EBP @ {name}
+=========={len}====
 
 {desc}
 """.format(

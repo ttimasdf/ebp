@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Uni-patcher is a program which would patch binary efficiently based on binary fingerprints.
+EBP is a program which would patch binary efficiently based on binary fingerprints.
 """
 
 from pathlib import Path
 import mmap
 import logging
 
-logger = logging.getLogger('uni-patcher')
+logger = logging.getLogger('EBP')
 logger.setLevel('DEBUG')
 
 fingerprints = [
