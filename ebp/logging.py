@@ -1,10 +1,10 @@
 import logging
-import os
 
 
 logging.basicConfig()
 
 _verbose = False
+
 
 def get_logger(name, verbose=False):
     global _verbose

@@ -4,6 +4,7 @@ BACKUP_SUFFIX = ".bak"
 
 _parser = configparser.ConfigParser()
 
+
 def parse_file(filename):
     """Return all infomation you needed to patch files"""
     _parser.read(filename)
@@ -35,14 +36,14 @@ def parse_file(filename):
                     "fg": zip(
                         (int(i) for i in line[2::2]),
                         (bytes.fromhex(i) for i in line[3::2])),
-                    })
+                })
         if 'absolutes' in s:
             for line in s['absolutes'].strip('\n, ').split('\n'):
                 this['absolutes'].append({
                     "pos": int(line[0]),
                     "src": bytes.fromhex(line[1]),
                     "dst": bytes.fromhex(line[2]),
-                    })
+                })
 
         result['files'][patch_name] = this
 

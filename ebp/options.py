@@ -1,4 +1,4 @@
-from argparse import ArgumentParser, FileType
+from argparse import ArgumentParser
 
 desc = """EBP is a program which would patch (even large) binary
 efficiently based on binary fingerprints.
@@ -7,13 +7,13 @@ efficiently based on binary fingerprints.
 _parser = ArgumentParser(prog=__package__, description=desc)
 
 _parser.add_argument("-c", "--config",
-    dest="conf_file", help="Configuration file")
+                     dest="conf_file", help="Configuration file")
 _parser.add_argument("-r", "--reverse",
-    action="store_true", help="Revert files using backups")
+                     action="store_true", help="Revert files using backups")
 _parser.add_argument("-t", "--test", "--dry-run",
-    action="store_true", help="Verify only")
-_parser.add_argument("-v", "--verbose",
-    action="store_true", help="Output more information for diagnostic")
+                     action="store_true", help="Verify only")
+_parser.add_argument("-v", "--verbose", action="store_true",
+                     help="Output more information for diagnostic")
 _parser.add_argument("source", help="Base directory from config file")
 
 

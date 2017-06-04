@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
-import os
 from progressbar import ProgressBar
-from binascii import hexlify
 
 if len(sys.argv) >= 3:
     orig = sys.argv[1]
@@ -38,4 +36,3 @@ for i in bar(range(filelen)):
     if byte_o != byte_p:
         result.append((i, byte_o, byte_p))
         f_result.write("{}: {:02X} {:02X}\n".format(i, byte_o[0], byte_p[0]))
-

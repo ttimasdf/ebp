@@ -9,6 +9,7 @@ from os.path import exists
 import shutil
 from unsign.unsign import unsign_macho
 
+
 def main():
     args = options.get_args()
     log = logging.get_logger(__package__, args.verbose)
@@ -27,16 +28,17 @@ def main():
 
 {desc}
 """.format(
-    name=m['name'],
-    len='='*len(m['name']),
-    desc=m["description"],
+        name=m['name'],
+        len='=' * len(m['name']),
+        desc=m["description"],
     ))
 
     for name, info in conf['files'].items():
         log.info("Patching {}...".format(name))
 
         p = Patcher(info, basedir=args.source, test=args.test)
-        bak = shutil.copyfile(p.file, p.file.parent/(p.file.name+config.BACKUP_SUFFIX))
+        bak = shutil.copyfile(p.file, p.file.parent /
+                              (p.file.name + config.BACKUP_SUFFIX))
         log.debug("Backed up to {}".format(bak))
 
         if p.unsign:
