@@ -44,3 +44,12 @@ relatives=
 absolutes=
     65536,FEEDFACE,FEEDFACF
 ```
+
+
+
+A sample profile for [SublimeText on mac](sublime.ini) was provided as example, tested against version 3128. Try it with
+
+```
+./main.py -c sublime.ini /Applications/Sublime\ Text.app -v -u
+```
+
