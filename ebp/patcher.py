@@ -47,17 +47,17 @@ class Patcher(object):
             while anchor > 0:
                 log.debug("Found src at position {}".format(anchor))
                 j = 0
-                for pos, fg in item['fg']:
+                for pos, fg in item['fg'].items():
                     j += 1
-                    target = anchor + pos
-                    if self._map[target:target + len(fg)] == fg:
+                    start, end = pos
+                    if fg in self._map[anchor + start:anchor + end + len(fg)]:
                         log.debug("Fingerprint {} match!".format(j))
                         match = True
                     else:
                         log.debug("Fingerprint {} unmatch! {} => {}".format(
                             j,
                             fg.hex(),
-                            self._map[target:target + len(fg)].hex()))
+                            self._map[anchor + start:anchor + end + len(fg)].hex()))
                         match = False
                         break
                 if match:

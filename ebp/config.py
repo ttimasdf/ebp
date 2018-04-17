@@ -33,9 +33,9 @@ def parse_file(filename):
                 this['relatives'].append({
                     "src": bytes.fromhex(line[0]),
                     "dst": bytes.fromhex(line[1]),
-                    "fg": zip(
-                        (int(i) for i in line[2::2]),
-                        (bytes.fromhex(i) for i in line[3::2])),
+                    "fg": dict(zip(
+                        (_str2range(i) for i in line[2::2]),
+                        (bytes.fromhex(i) for i in line[3::2]))),
                 })
         if 'absolutes' in s:
             for line in s['absolutes'].strip('\n, ').split('\n'):
@@ -48,3 +48,11 @@ def parse_file(filename):
         result['files'][patch_name] = this
 
     return result
+
+
+def _str2range(s):
+    if '~' in s:
+        st, en = s.split('~', maxsplit=1)
+        return (int(st), int(en))
+    else:
+        return (int(s), int(s))
