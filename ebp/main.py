@@ -37,9 +37,12 @@ def main():
         log.info("Patching {}...".format(name))
 
         p = Patcher(info, basedir=args.source, test=args.test)
-        bak = shutil.copyfile(p.file, p.file.parent /
-                              (p.file.name + config.BACKUP_SUFFIX))
-        log.debug("Backed up to {}".format(bak))
+        target = p.file.parent / (p.file.name + config.BACKUP_SUFFIX)
+        if target.exists():
+            log.warning("Backup file {} already exists".format(target))
+        else:
+            shutil.copyfile(p.file, target)
+            log.debug("Backed up to {}".format(target))
 
         if p.unsign:
             unsign_macho(p.file.open('r+b'))

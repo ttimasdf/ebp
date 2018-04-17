@@ -72,5 +72,11 @@ class Patcher(object):
                     break
                 anchor = self._map.find(item['src'], anchor + 1)
 
+            if not match:
+                log.error("Patch {} not found".format(i))
+                if input("continue?(y/N) ") != "y":
+                    raise SystemExit
+
+
     def absolute_patch(self):
         log.error("NotImplemented: absolute_patch")
