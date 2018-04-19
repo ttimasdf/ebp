@@ -47,6 +47,7 @@ class Patcher(object):
             while anchor > 0:
                 log.debug("Found src at position {}".format(anchor))
                 j = 0
+                match = True
                 for pos, fg in item['fg'].items():
                     j += 1
                     start, end = pos
